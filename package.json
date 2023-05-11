@@ -1,0 +1,23 @@
+{
+  "name": "amazon-practice",
+  "version": "1.0.0",
+  "description": "방학동안 아마존 모델과 뷰 분리해서 다시 만들어보기",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakhacode/fe-max-amazon-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bakhacode/fe-max-amazon-practice/issues"
+  },
+  "homepage": "https://github.com/bakhacode/fe-max-amazon-practice#readme",
+  "devDependencies": {
+    "json-server": "^0.17.3",
+    "sass": "^1.62.1"
+  }
+}

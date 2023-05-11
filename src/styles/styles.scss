@@ -1,0 +1,13 @@
+@use "animation.scss";
+@use "color.scss";
+@use "font.scss";
+@use "reset.scss";
+//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+@use "nav-bar.scss";
+@use "modal.scss";
+@use "util.scss";
+
+body {
+  font-family: font.$font-family;
+  font-style: normal;
+}
