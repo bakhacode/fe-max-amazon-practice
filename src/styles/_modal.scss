@@ -1,0 +1,226 @@
+@use "color.scss";
+@use "font.scss";
+@use "animation.scss";
+
+@mixin modal {
+  position: absolute;
+  top: 38px;
+  @include font.BodySM;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  z-index: 5;
+}
+
+@mixin modal-button {
+  @include font.BoldSM;
+  margin: 0 auto;
+
+  background: linear-gradient(
+    174.6deg,
+    color.$white 4.31%,
+    color.$primary-yellow100 50.01%,
+    color.$primary-yellow200 95.71%
+  );
+  border: 1px solid #de9408;
+  border-radius: 4px;
+  text-align: center;
+}
+
+@mixin rectangle {
+  position: relative;
+  background-image: url(/src/assets/img/rectangle.svg);
+  width: 20px;
+  height: 20px;
+  top: 10px;
+}
+
+.welcome-modal {
+  @include modal;
+  width: 235px;
+  height: 100px;
+  right: 172px;
+  color: color.$black;
+  animation: fadein 1s;
+
+  &__button {
+    @include modal-button;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    width: 160px;
+    height: 32px;
+  }
+  &__rectangle {
+    position: relative;
+    @include rectangle;
+    left: 201px;
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+
+    width: 235px;
+    height: 90px;
+
+    background: color.$white;
+    border-radius: 4px;
+  }
+
+  &__caption {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 3px;
+  }
+
+  a {
+    color: color.$secondary-navy;
+  }
+}
+
+.address-modal {
+  @include modal;
+
+  width: 320px;
+  height: 136px;
+  left: 131px;
+  color: color.$black;
+  animation: fadein 1s;
+
+  &__rectangle {
+    @include rectangle;
+    left: 17px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 16px;
+    gap: 26px;
+
+    width: 320px;
+    height: 126px;
+
+    background: color.$white;
+    border-radius: 4px;
+  }
+
+  &__button-container {
+    display: flex;
+
+    padding: 0px;
+    gap: 8px;
+    width: 105px;
+    height: 32px;
+  }
+
+  &__button1 {
+    @include modal-button;
+    width: 39px;
+    height: 32px;
+  }
+  &__button2 {
+    @include modal-button;
+    width: 58px;
+    height: 32px;
+  }
+}
+
+.login-modal {
+  @include modal;
+  position: absolute;
+  width: 335px;
+  height: 375px;
+  top: 37px;
+  right: 125px;
+  color: color.$black;
+  animation: fadein 1s;
+
+  &__button {
+    @include modal-button;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    width: 160px;
+    height: 32px;
+  }
+  &__rectangle {
+    @include rectangle;
+    left: 252px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 335px;
+    height: 365px;
+
+    padding: 16px;
+    gap: 8px;
+
+    background: color.$white;
+    border-radius: 4px;
+  }
+
+  &__caption {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 203px;
+    height: 18px;
+    padding: 0px;
+    gap: 3px;
+  }
+
+  a {
+    color: color.$secondary-navy;
+  }
+
+  &__border-line {
+    border: 1px solid color.$gray100;
+    width: 303px;
+    height: 1px;
+  }
+
+  &__category {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 3px;
+
+    width: 303px;
+    height: 258px;
+
+    &-name {
+      @include font.BoldMD;
+    }
+  }
+
+  .item-container1 {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 16px;
+    gap: 4px;
+  }
+
+  .item-container2 {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 258px;
+    gap: 4px;
+  }
+}
