@@ -29,8 +29,8 @@ export class LoginModalView {
 
   template() {
     return `
-      <div class="login-modal__rectangle"></div>
       <div class="login-modal__content">
+        <div class="login-modal__rectangle"></div>
           <button class="login-modal__button">로그인</button>
           <div class="login-modal__caption">
             <div>기존 사용자가 아니십니까?</div>

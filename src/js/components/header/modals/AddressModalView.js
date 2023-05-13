@@ -1,7 +1,6 @@
 export class AddressModalView {
   constructor(model) {
     this.addressArea = document.querySelector(".address");
-
     this.addressModal = this.createAddressModal();
 
     this.model = model;
@@ -30,8 +29,8 @@ export class AddressModalView {
 
   getTemplate() {
     return `
-      <div class="address-modal__rectangle"></div>
       <div class="address-modal__content">
+      <div class="address-modal__rectangle"></div>
         <div>
           KR으로 배송할 품목을 표시하겠습니다. 다른 국가로 배송되는 품목을
           보려면 배송 주소를 변경하십시오.
@@ -40,6 +39,7 @@ export class AddressModalView {
           <button class="address-modal__button1">계속</button>
           <button class="address-modal__button2">주소 변경</button>
         </div>
+        <div class="address-modal__rectangle"></div>
       </div>
       `;
   }

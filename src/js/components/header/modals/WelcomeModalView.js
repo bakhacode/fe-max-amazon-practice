@@ -19,6 +19,7 @@ export class WelcomeModalView {
 
   render() {
     const { welcomeModalVisible } = this.model.getState();
+
     if (welcomeModalVisible) {
       this.welcomeModal.style.display = "block";
     } else {
@@ -28,8 +29,8 @@ export class WelcomeModalView {
 
   template() {
     return `
-      <div class="welcome-modal__rectangle"></div>
       <div class="welcome-modal__content">
+      <div class="welcome-modal__rectangle"></div>
         <button class="welcome-modal__button">로그인</button>
         <div class="welcome-modal__caption">
           <div>기존 사용자가 아니십니까?</div>

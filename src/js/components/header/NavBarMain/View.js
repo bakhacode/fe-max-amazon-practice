@@ -2,31 +2,48 @@ export class NavMainView {
   constructor(model, intent) {
     this.model = model;
     this.intent = intent;
-
     this.$navMain = document.querySelector(".nav-bar__main");
+
     this.render();
     this.setEvent();
   }
 
+  render() {
+    this.$navMain.innerHTML = this.getTemplate();
+  }
+
   setEvent() {
-    document.addEventListener("DOMContentLoaded", this.intent.handleLoaded);
+    document.addEventListener(
+      "DOMContentLoaded",
+      this.intent.handleLoaded.bind(this.intent)
+    );
 
     const $addressArea = this.$navMain.querySelector(".address");
-
-    $addressArea.addEventListener("mouseenter", this.intent.handleMouseEnter);
-    $addressArea.addEventListener("mouseleave", this.intent.handleMouseLeave);
+    if ($addressArea) {
+      $addressArea.addEventListener(
+        "mouseenter",
+        this.intent.handleAddressMouseEnter.bind(this.intent)
+      );
+      $addressArea.addEventListener(
+        "mouseleave",
+        this.intent.handleAddressMouseLeave.bind(this.intent)
+      );
+    }
 
     const $loginArea = this.$navMain.querySelector(".login");
-
-    $loginArea.addEventListener("mouseenter", this.intent.handleMouseEnter);
-    $loginArea.addEventListener("mouseleave", this.intent.handleMouseLeave);
+    if ($loginArea) {
+      $loginArea.addEventListener(
+        "mouseenter",
+        this.intent.handleLoginMouseEnter.bind(this.intent)
+      );
+      $loginArea.addEventListener(
+        "mouseleave",
+        this.intent.handleLoginMouseLeave.bind(this.intent)
+      );
+    }
   }
 
-  render() {
-    this.$navMain.innerHTML = this.template();
-  }
-
-  template() {
+  getTemplate() {
     return `
     <img src="src/assets/img/amazon-logo.svg" />
       <div class="address">
