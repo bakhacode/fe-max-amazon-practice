@@ -3,6 +3,7 @@
 @use "animation.scss";
 
 @mixin modal {
+  display: none;
   position: absolute;
   top: 38px;
   @include font.BodySM;
